@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="d-flex justify-content-center align-items-center" style="min-height: 80vh;">
+    <div class="w-100" style="max-width: 600px;">
+        <h2 class="mb-4 text-center">Me Zan Karanta?</h2>
+        <form action="{{ url_for('submit_text') }}" method="post">
+            <div class="input-group mb-3">
+                <span class="input-group-text">+</span>
+                <input type="text" name="hausa_text" class="form-control" placeholder="Rubuta nan..." required>
+                <button class="btn btn-primary" type="submit">➤</button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

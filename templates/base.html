@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ha">
+<head>
+    <meta charset="UTF-8">
+    <title>Hausa TTS App</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <style>
+        body { overflow-x: hidden; }
+        .sidebar {
+            height: 100vh;
+            background-color: #f8f9fa;
+            padding-top: 1rem;
+            overflow-y: auto;
+        }
+        .sidebar a {
+            display: block;
+            padding: 0.8rem 1rem;
+            color: #000;
+            text-decoration: none;
+        }
+        .sidebar a:hover {
+            background-color: #e2e6ea;
+        }
+        .new_text{
+            margin-bottom: 50px;
+        }
+    </style>
+</head>
+<body>
+<div class="row g-0">
+    <div class="col-md-3 sidebar">
+        <a class="new_text text-end px-5" href="{{ url_for('new_text') }}">🖊</a>
+        {% for item in history %}
+            <a href="{{ url_for('view_history', item_id=item[0]) }}">{{ item[1][:30] }}{% if item[1]|length > 30 %}...{% endif %}</a>
+        {% endfor %}
+    </div>
+    <div class="col-md-9 p-4">
+        {% block content %}{% endblock %}
+    </div>
+</div>
+</body>
+</html>
