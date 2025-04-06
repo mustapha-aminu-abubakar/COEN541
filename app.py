@@ -55,6 +55,7 @@ def view_history(item_id):
     history = get_all_history()
     with sqlite3.connect(DB_PATH) as conn:
         row = conn.execute("SELECT text, audio_file, timestamp FROM tts_history WHERE id = ?", (item_id,)).fetchone()
+    # print(row)
     return render_template('history.html', item=row, history=history)
 
 if __name__ == '__main__':

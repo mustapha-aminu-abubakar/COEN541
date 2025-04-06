@@ -30,7 +30,7 @@
 <body>
 <div class="row g-0">
     <div class="col-md-3 sidebar">
-        <a class="new_text text-end px-5" href="{{ url_for('new_text') }}">🖊</a>
+        <a class="new_text" href="{{ url_for('new_text') }}"><strong>Sabon Rubutu🖊</strong></a>
         {% for item in history %}
             <a href="{{ url_for('view_history', item_id=item[0]) }}">{{ item[1][:30] }}{% if item[1]|length > 30 %}...{% endif %}</a>
         {% endfor %}

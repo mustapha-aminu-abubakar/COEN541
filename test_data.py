@@ -10,11 +10,11 @@ def insert_test_data_hausa():
     """
     
     hausa_test_data = [
-        ("Ina kwana? Yaya lafiya?", "ina_kwana.mp3"),
-        ("Barka da safiya!", "barka_safiya.mp3"),
-        ("Me sunan ka?", "sunan_ka.mp3"),
-        ("Na gode sosai", "nagode.mp3"),
-        ("Zan iya taimaka?", "taimako.mp3")
+        ("Ina kwana? Yaya lafiya?", "static/audio/ina_kwana.mp3"),
+        ("Barka da safiya!", "static/audio/barka_safiya.mp3"),
+        ("Me sunan ka?", "static/audio/sunan_ka.mp3"),
+        ("Na gode sosai", "static/audio/nagode.mp3"),
+        ("Zan iya taimaka?", "static/audio/taimako.mp3")
     ]
     
     with sqlite3.connect(DB_PATH) as conn:
